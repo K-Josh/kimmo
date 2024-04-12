@@ -16,17 +16,18 @@ function LandData() {
         <>
             <Navbar />
               <Box minHeight={'85vh'} >
-                <Box mt={'3rem'}>
+                <Box mt={{sm:'1rem',md:'3rem'}}>
                     <Flex alignItems='center' justify='space-between'>
-                        <Heading p={{sm:'', md:3}}>{data.landTitle}</Heading>
-                        <Link as={NextLink} href='/'>
+                        <Heading fontSize={{sm:'15px', md:'1.8rem'}} mx={{md:'12px'}} p={{sm:1, md:3}}>{data.landTitle}</Heading>
+                        <Link display={{sm:'none', md:'inline-flex'}} _hover='' className='hover:underline-none' as={NextLink} href='/'>
                             <Button bg='#008374' spacing='1rem'
                                     className='text-[#fff]'
+                                    _hover={{bg:'green.600',}}
                                     mx='10px'
                                     h={{sm:'2rem', md:'2rem'}}
-                                    w={{sm:'3rem', md:'4rem'}}>
+                                    w={{sm:'3.6rem', md:'4rem'}}>
                                 <Flex alignItems='center'>
-                                    <Icon as={FaArrowLeft} className='text-white'/>
+                                    <Icon as={FaArrowLeft} className='text-white text-sm'/>
                                     home
                                 </Flex>
                             </Button>
@@ -34,7 +35,8 @@ function LandData() {
                     </Flex>
                     <Box p={3}>
                         <Image src={data.imageSrc}
-                               height={{sm:'', md:'20rem'}}
+                               height={{sm:'13rem', md:'22rem'}}
+                               width={{sm:'85%', md:'45%'}}
                                mx={{sm:'', md:'12px'}}
                                alt='map' />
                     </Box>
@@ -45,15 +47,15 @@ function LandData() {
                       bg={'#fff'}
                       p={2}
                       className='shadow-md'
-                      width={'30%'}
+                      width={{sm:'84%', md:'30%'}}
                       height={'20%'}
                       flexDirection={'column'}
-                      mx={{sm:'', md:'12px'}}
+                      mx={{sm:'8px', md:'12px'}}
                   >
                       <HStack p={4} display={'flex'} justify={'space-between'}>
                          <Box>
                              <Text className='font-semibold'>{data.landDescription}</Text>
-                             <Text>{data.landPrice}</Text>
+                             <Text className='font-light'>{data.landPrice}</Text>
                          </Box>
                           <Box>
                              <LandsButton label='300,000/m' />

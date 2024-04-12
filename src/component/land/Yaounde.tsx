@@ -24,7 +24,7 @@ interface LandData {
 const data: LandData = {
     landTitle: 'Information about the land',
     landDescription: 'Located at Etoudi',
-    landPrice: '300,000/m',
+    landPrice: '300,000CFA/m',
     cardTitle: 'Etoudi',
     cardListItems: [
         {

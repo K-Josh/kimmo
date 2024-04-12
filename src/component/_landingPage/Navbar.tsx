@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import {
     Box, Button, Collapse,
-    Flex, IconButton, Link,
+    Flex, IconButton, Link, SlideFade,
     Stack, Text,
     useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
@@ -27,16 +27,17 @@ export default function Navbar() {
             >
                 <Flex
                     flex={{base: 1, md: 'auto'}}
-                    ml={{base: 3}}
+                    ml={{sm: 1}}
                     display={{base: 'flex', md: 'none'}}
                 >
                     <IconButton
                         onClick={onToggle}
+                        size='sm'
                         bg={useColorModeValue('green.600', 'white')}
                         _hover={{bg: 'green.500'}}
                         aria-label={'Toggle'}
-                        icon={isOpen ? <CloseIcon color={'white'} w={3} h={3} />
-                            : <HamburgerIcon color={'white'} w={3} h={3} />}/>
+                        icon={isOpen ? <CloseIcon color={'white'} w={2} h={2} />
+                            : <HamburgerIcon color={'white'} w={2} h={2} />}/>
                 </Flex>
                 <Flex
                     flex={{base: 1}} mx={{base: 'auto'}}
@@ -109,7 +110,7 @@ const DesktopNav = () => {
 
 const MobileNav =() => {
     return (
-      <Stack p={4} bg={useColorModeValue('white','green.800')}>
+      <Stack p={2} bg={useColorModeValue('green.600','white')}>
           {NAV_Items.map((navItem) => (
             <MobileNavItem key={navItem.label} {...navItem} />
           ))}
@@ -128,7 +129,7 @@ const MobileNavItem = ({label, href}: NavItem) => {
            as={Link}
            href={href ?? '#'}
           >
-            <Text fontWeight={400} color={useColorModeValue('green.400', 'white')}>
+            <Text fontWeight={400} color={useColorModeValue('white', 'green.500')}>
                 {label}
             </Text>
           </Flex>

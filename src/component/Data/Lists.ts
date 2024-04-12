@@ -1,4 +1,5 @@
 import {CardProps} from "@chakra-ui/card";
+import {PricingProps} from "@/component/subComponents/PricingComponent";
 
 export const lists: CardProps[] = [
     {
@@ -103,4 +104,52 @@ export const cities: CardProps[] = [
         title: 'Bamenda',
     },
 
+]
+
+export const pricing: PricingProps[] = [
+    {
+        id: 1,
+        tag: "Professional",
+        price: "599.00",
+        text: "Proffesional listing submission, active for 60 days",
+    },
+    {
+        id: 2,
+        tag: "Business",
+        price: "999.00",
+        text: "Business listing submission, active for 90 days",
+    },
+    {
+        id: 3,
+        tag: "Basic",
+        price: "Free",
+        text: "Basic listing submission, active for 30 days",
+    },
+]
+
+export const pricingLists = [
+    {
+        id: 1,
+        propOne: "All Operating Supported",
+        propTwo: "20 Property Listings",
+        propThree: "60 Days Availability",
+        propFour: "Feature Properties",
+        propFive: "24/7 Full Support",
+    },
+    {
+        id: 2,
+        propOne: "All Operating Supported",
+        propTwo: "30 Property Listings",
+        propThree: "90 Days Availability",
+        propFour: "Feature Properties",
+        propFive: "24/7 Full Support",
+    },
+    {
+        id: 3,
+        propOne: "All Operating Supported",
+        propTwo: "10 Property Listings",
+        propThree: "30 Days Availability",
+        propFour: "Feature Properties",
+        propFive: "24/7 Full Support",
+    },
 ]
