@@ -1,8 +1,8 @@
 "use client"
-import React, {useState} from 'react';
+import React from 'react';
 import {
     Box, Button, Collapse,
-    Flex, IconButton, Link, SlideFade,
+    Flex, IconButton, Link,
     Stack, Text,
     useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
@@ -12,17 +12,12 @@ import {ButtonElement} from "@/component/subComponents/buttonComponent";
 
 export default function Navbar() {
     const {isOpen, onToggle} = useDisclosure();
-    const[isNewWindow, setIsNewWindow] = useState(false)
-    const openNewWindow = () => {
-        const newWindow = window.open('/lands', '_blank');
-        setIsNewWindow(true); // Trigger state change for conditional rendering
-    };
     return (
-        <Box width={'100%'} className='relative fixed mt-0 top-0'>
+        <>
             <Flex
-                color={useColorModeValue('green.400', 'green.600')}
+                className='text-[#fff]'
                 py={{base: 3}}
-                px={{base: 4}}
+                px={{base: 4, sm:2}}
                 align={'center'}
             >
                 <Flex
@@ -32,8 +27,7 @@ export default function Navbar() {
                 >
                     <IconButton
                         onClick={onToggle}
-                        size='sm'
-                        bg={useColorModeValue('green.600', 'white')}
+                        size='md'
                         _hover={{bg: 'green.500'}}
                         aria-label={'Toggle'}
                         icon={isOpen ? <CloseIcon color={'white'} w={2} h={2} />
@@ -67,9 +61,8 @@ export default function Navbar() {
                         as={'a'}
                         fontSize={'sm'}
                         fontWeight={300}
-                        variant={'link'}
                         href={'#'}
-                        color={'WhiteAlpha.300'}
+                        color={'blackAlpha.300'}
                         px={4}
                     >
                         <Text fontSize={{base: '1rem', md: '1.3rem'}}>Login/register</Text>
@@ -77,14 +70,16 @@ export default function Navbar() {
                     <ButtonElement label='Add Property' icon={MdArrowOutward} />
                 </Stack>
             </Flex>
-                <Collapse in={isOpen} animateOpacity><MobileNav /></Collapse>
+                <Collapse in={isOpen} transition={{exit: {delay: 1}, enter: {duration: 0.5}}} animateOpacity><MobileNav /></Collapse>
 
-        </Box>
+        </>
 
     );
 }
 
-const DesktopNav = () => {
+
+
+export const DesktopNav = () => {
     const linkColor = useColorModeValue('green.600', 'green.300');
     const linkHoverColor = useColorModeValue('green.800', 'white');
     return (
@@ -108,9 +103,9 @@ const DesktopNav = () => {
     );
 }
 
-const MobileNav =() => {
+export const MobileNav =() => {
     return (
-      <Stack p={2} bg={useColorModeValue('green.600','white')}>
+      <Stack p={2} className='w-[100vw] z-1' bg={useColorModeValue('blackAlpha.700','white')}>
           {NAV_Items.map((navItem) => (
             <MobileNavItem key={navItem.label} {...navItem} />
           ))}

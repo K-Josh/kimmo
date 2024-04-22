@@ -4,7 +4,7 @@ import {PricingProps} from "@/component/subComponents/PricingComponent";
 export const lists: CardProps[] = [
     {
         id: 1,
-        image: "house.jpg",
+        image: "../mansion.png",
         title: "House on Etoudi",
         text: "Yaounde",
         link: "/lands/Etoudi",
@@ -16,9 +16,10 @@ export const lists: CardProps[] = [
     },
     {
         id: 2,
-        image: "house.jpg",
+        image: "../house.jpg",
         title: "House in Nlongkak",
         text: "Yaounde",
+        link: "/lands/Buea",
         price: "$10,00",
         tags: "For Sale",
         properties_1: "9 bedRooms",
@@ -27,9 +28,10 @@ export const lists: CardProps[] = [
     },
     {
         id: 3,
-        image: "house.jpg",
+        image: "../housebg.jpg",
         title: "A piece of land",
         text: "Douala",
+        link: "/lands/Douala",
         price: "$2.500",
         tags: "For Sale",
         properties_1: "6 bedRooms",
@@ -38,9 +40,10 @@ export const lists: CardProps[] = [
     },
     {
         id: 4,
-        image: "house.jpg",
+        image: "../bedroom.png",
         title: "Quality Apartment For Sale",
         text: "Buea",
+        link: "/lands/Buea",
         price: "$3,000",
         tags: "For Sale",
         properties_1: "6 bedRooms",
@@ -49,15 +52,40 @@ export const lists: CardProps[] = [
     },
     {
         id: 5,
-        image: "house.jpg",
+        image: "../estate.png",
         title: "Family House",
-        text: "Germany",
+        text: "Ngaoundere",
+        link: "/lands/Ngaoundere",
         price: "$3,800",
         tags: "For Sale",
         properties_1: "10 bedRooms",
         properties_2: "2 Baths",
         perimeter: "700 sqft",
-    }
+    },
+    {
+        id: 6,
+        image: "../house.jpg",
+        title: "Live Dream",
+        text: "Ebolowa",
+        link: "/lands/Ebolowa",
+        price: "$9,800",
+        tags: "For Sale",
+        properties_1: "10 bedRooms",
+        properties_2: "2 Baths",
+        perimeter: "700 sqft",
+    },
+    {
+        id: 7,
+        image: "../housebg.jpg",
+        title: "Sweet Home",
+        text: "Bamenda",
+        link: "/lands/Bamenda",
+        price: "$4,800",
+        tags: "For Sale",
+        properties_1: "9 bedRooms",
+        properties_2: "2 Baths",
+        perimeter: "400 sqft",
+    },
 ]
 
 export const cities: CardProps[] = [
@@ -112,44 +140,32 @@ export const pricing: PricingProps[] = [
         tag: "Professional",
         price: "599.00",
         text: "Proffesional listing submission, active for 60 days",
+        list_one: "All Operating Supported",
+        list_two: "20 Property Listings",
+        list_three:"60 Days Availability",
+        list_four: "Feature Properties",
+         list_five: "24/7 Full Support",
     },
     {
         id: 2,
         tag: "Business",
         price: "999.00",
         text: "Business listing submission, active for 90 days",
+        list_one: "All Operating Supported",
+        list_two: "30 Property Listings",
+        list_three: "90 Days Availability",
+        list_four:"Feature Properties",
+        list_five: "24/7 Full Support"
     },
     {
         id: 3,
         tag: "Basic",
         price: "Free",
         text: "Basic listing submission, active for 30 days",
-    },
-]
-
-export const pricingLists = [
-    {
-        id: 1,
-        propOne: "All Operating Supported",
-        propTwo: "20 Property Listings",
-        propThree: "60 Days Availability",
-        propFour: "Feature Properties",
-        propFive: "24/7 Full Support",
-    },
-    {
-        id: 2,
-        propOne: "All Operating Supported",
-        propTwo: "30 Property Listings",
-        propThree: "90 Days Availability",
-        propFour: "Feature Properties",
-        propFive: "24/7 Full Support",
-    },
-    {
-        id: 3,
-        propOne: "All Operating Supported",
-        propTwo: "10 Property Listings",
-        propThree: "30 Days Availability",
-        propFour: "Feature Properties",
-        propFive: "24/7 Full Support",
+        list_one:"All Operating Supported",
+        list_two: "10 Property Listings",
+        list_three: "30 Days Availability",
+        list_four: "Feature Properties",
+        list_five: "24/7 Full Support"
     },
 ]

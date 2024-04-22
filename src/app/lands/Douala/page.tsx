@@ -1,7 +1,6 @@
 "use client"
 import React, {useState} from 'react';
 import {Box, Center, Text, Flex, Heading, HStack, Button, Image} from "@chakra-ui/react";
-import data from "@/component/land/Yaounde";
 import {LandsButton} from "@/component/subComponents/buttonComponent";
 import Footer from "@/component/_landingPage/Footer";
 import {Icon} from "@chakra-ui/icons";
@@ -13,7 +12,7 @@ import {NewWindowNavbar} from "@/component/layout/Nav";
 import { motion } from 'framer-motion';
 import {fadeIn} from "@/variants";
 import NewListing from "@/component/_landingPage/NewListing";
-
+import data from "../../../component/land/Douala";
 
 function LandData() {
     const[isNewWindow, setIsNewWindow] = useState(false);
@@ -77,7 +76,7 @@ function LandData() {
                     <HStack p={4} display={'flex'} justify={'space-between'}>
                         <Box>
                             <Text className='font-semibold'>{data.landDescription}</Text>
-                            <Text className='font-light'>{data.landPrice}</Text>
+                            <Text className='font-light'>{data.landPrice}<sup>2</sup></Text>
                         </Box>
                         <Box>
                             <LandsButton label='300,000/m' />

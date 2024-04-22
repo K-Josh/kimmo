@@ -8,6 +8,7 @@ import {SearchIcon} from "@chakra-ui/icons";
 function Hero() {
     return (
         <div className='back min-h-[87vh]'>
+            <Navbar />
           <Flex p={{base:2,md:1}}
                 justifyContent={{base:'', md:'space-between'}}
               flex={{base: '1', md: '1'}}

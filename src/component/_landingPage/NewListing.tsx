@@ -14,10 +14,10 @@ function NewListing() {
         infinite: false,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -47,15 +47,16 @@ function NewListing() {
         ]
     }
 
-    return <Container className='' my={{base:'14vh', md:'13vh'}} maxW={'container.lg'}>
-         <Box
-             gap={{base:'2.8rem', md:'3rem'}}>
-           <Box mb={'2rem'}>
-               <Text fontSize={{base:'1.6rem', md:'3rem'}} className='font-bold'>
-                   Discover our Featured Listings
-               </Text>
+    return <Container my={{base:'14vh', md:'13vh'}} maxW={'container.lg'}>
+         <Box gap={{base:'2.8rem', md:'3rem'}}>
+           <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
+              <Box>
+                  <Text fontSize={{base:'1.6rem', md:'2.5rem'}} className='font-bold'>
+                      Discover our Featured Listings
+                  </Text>
+              </Box>
                <Box display={'flex-start'}
-                   className='relative'>
+                   className='relative cursor-pointer'>
                    <Text fontSize={'0.8rem'}>
                        See All Properties
                        <IconButton aria-label='up arrow' colorScheme='none'

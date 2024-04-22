@@ -6,6 +6,17 @@ module.exports = {
       "./components/**/*.{js,ts,jsx,mdx}"
   ],
   theme: {
+    fontFamily: {
+      primary: "Inter",
+      secondary: "Open-sans",
+      tertiary: "Volkhov"
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
+    },
     container: {
       padding: "2rem",
       center: true,

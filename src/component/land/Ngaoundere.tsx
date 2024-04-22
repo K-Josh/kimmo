@@ -14,22 +14,22 @@ interface LandData {
     landPrice: string;
     cardTitle: string;
     cardListItems: {
-        superficial: string;
-        price: string;
-        onClick: () => void;
+      superficial: string;
+      price: string;
+      onClick: () => void;
     }[],
     imageSrc?: string;
 }
 
 const data: LandData = {
     landTitle: 'Information about the land',
-    landDescription: 'Located at Obala',
+    landDescription: 'Located at Etoudi',
     landPrice: '700,000CFA/m',
-    cardTitle: 'Obala',
+    cardTitle: 'Ngaoundere',
     cardListItems: [
         {
             superficial: '200 sqft',
-            price: '5M',
+            price: '7M',
             onClick: <ButtonElement />,
         },
         {
@@ -52,8 +52,8 @@ const data: LandData = {
     Data: [
         {
             title: 'Formule à distance',
-            price: '400,000',
-            superficial: '600 sqft',
+            price: '700,000 FCFA',
+            superficial: '300 sqft',
             text: 'Accès à une connexion internet illimitée'
         }
     ]

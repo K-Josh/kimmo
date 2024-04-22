@@ -12,15 +12,15 @@ function Explore() {
         infinite: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 8000,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
+                    slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -46,18 +46,19 @@ function Explore() {
     }
 
     return (
-        <Container my={{base:'14vh', md:'13vh'}} maxW={'container.lg'}>
+        <Container my={{base:'14vh', md:'9vh'}} maxW={'container.lg'}>
            <Box gap={{base:'0.8rem', md:'1rem'}}
                 width={'100%'}
            >
-               <Box mb={'1rem'} display={'flex'} alignItems={'center'} justifyContent={'space-between'} >
-                  <Box>
-                      <Text fontSize={{base:'1.6rem', md:'3rem'}} className='font-bold'>
-                          Explore All Cities
-                      </Text>
-                  </Box>
-                   <Box className='relative mx-[5rem]'>
-                       <Text fontSize={'0.8rem'} className='whitespace-nowrap'>
+               <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
+                   <Box>
+                       <Text fontSize={{base:'1.6rem', md:'2.5rem'}} className='font-bold'>
+                           Explore Our Cities
+                       </Text>
+                   </Box>
+                   <Box display={'flex-start'}
+                        className='relative cursor-pointer'>
+                       <Text fontSize={'0.8rem'}>
                            All Cities
                            <IconButton aria-label='up arrow' colorScheme='none'
                                        icon={<MdArrowOutward className='text-[#1e1e1e]' />} />

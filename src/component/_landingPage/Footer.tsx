@@ -6,7 +6,7 @@ import {FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter} from "react-icons/fa6
 
 function Footer() {
     return (
-        <Box className='mt-6 bg-[#008374] text-[#fff] w-[100%] h-[50%]'>
+        <Box className='mt-6 bg-[#1e1e1e] text-[#fff] w-[100%] h-[50%]'>
             {/*header in footer*/}
             <Flex p={{sm:'2rem', md:'3rem'}} justifyContent='space-between'>
               <Box>
@@ -32,7 +32,7 @@ function Footer() {
                 orientation='horizontal'
                      mt={{sm:'-20px', md:'-1rem'}} w={{sm:'82%', md:'94%'}} mx={{sm:'1.6rem',md:'3rem'}} />
             <SimpleGrid spacingY={{sm:'13px'}} columns={{sm:2, md:3}} p={{sm:'2rem', md:'3rem'}}
-                        mt={{sm:'-10px',md:'-2.5rem'}} className='relative z-1'>
+                        mt={{sm:'-10px',md:'-2.5rem'}} className='relative gap-x-3 z-1'>
                 <Stack spacingY='10px'>
                     <Text className='font-semibold'>Popular Search</Text>
                     <Text fontSize={{sm:'13px', md:'15px'}} className='opacity-80'>Apartment for Sale</Text>

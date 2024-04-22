@@ -10,7 +10,7 @@ import Pricing from "@/component/_landingPage/Pricing";
 export default function Home() {
   return (
     <>
-     <Navbar />
+     {/*<Navbar />*/}
      <Hero />
      <FindHome />
      <NewListing />

@@ -2,4 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.animated_card::before {
+    position: absolute;
+    margin-top: -1.3rem;
+    margin-left: -1.5rem;
+    border-radius: 15px;
+    content: '';
+    height: 456px;
+    background: #F58629;
+    transition: 0.3s;
+    z-index: -1;
+    animation: animate 2s linear infinite;
+}
+.animated_card:hover::before {
+    height: 460px;
+    width: 335px;
+}
+@keyframes animate {
+    50% {
+        filter: hue-rotate(350deg);
+    }
+}
+@layer base {
+    body{
+        @apply font-primary
+    }
+}
