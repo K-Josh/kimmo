@@ -1,11 +1,12 @@
 "use client"
 import React from 'react';
 import {
-    Box, Button, Collapse,
-    Flex, IconButton, Link,
+    Box, Button, Collapse, Container,
+    Flex, IconButton,
     Stack, Text,
     useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
+import { Link } from 'react-scroll';
 import {HamburgerIcon, CloseIcon, Icon} from "@chakra-ui/icons"
 import {MdArrowOutward} from "react-icons/md";
 import {ButtonElement} from "@/component/subComponents/buttonComponent";
@@ -13,11 +14,11 @@ import {ButtonElement} from "@/component/subComponents/buttonComponent";
 export default function Navbar() {
     const {isOpen, onToggle} = useDisclosure();
     return (
-        <>
+        <Container maxW='550px'>
             <Flex
-                className='text-[#fff]'
+                className='text-[#fff] md:gap-[2rem] md:mx-[-9rem]'
                 py={{base: 3}}
-                px={{base: 4, sm:2}}
+                px={{md: '1px', sm:2}}
                 align={'center'}
             >
                 <Flex
@@ -35,13 +36,12 @@ export default function Navbar() {
                 </Flex>
                 <Flex
                     flex={{base: 1}} mx={{base: 'auto'}}
-                    align={{md: 'center'}} justify={{base: 'center', md:'start'}}
-                    justifyContent={{md: 'space-between'}}>
-                    <Text fontWeight={500} fontSize={{base: '0.8rem', md: '2rem'}} className='whitespace-nowrap uppercase'>
+                    align={{md: 'center'}} justify={{base: 'center', md:'start'}}>
+                    <Text fontWeight={500} fontSize={{base: '0.8rem', md: '2rem'}} className='md:gap-[2rem] whitespace-nowrap uppercase'>
                         Kimmo Deals
                     </Text>
                     <Flex
-                        className='relative mx-0 md:mx-[14rem]'
+                        className='relative mx-0 md:mx-[2rem] md:gap-[2rem]'
                         display={{base: 'none', md: 'flex'}}
                         flex={{base: 1, md: 0}}
                         justify={'flex-end'}
@@ -53,7 +53,6 @@ export default function Navbar() {
                 </Flex>
                 <Stack
                     flex={{base: 1, md:0}}
-                    justify={'flex-end'}
                     direction={'row'}
                     spacing={4}
                 >
@@ -61,25 +60,24 @@ export default function Navbar() {
                         as={'a'}
                         fontSize={'sm'}
                         fontWeight={300}
+                        colorScheme='none'
                         href={'#'}
-                        color={'blackAlpha.300'}
+                        color={'whiteAlpha.900'}
                         px={4}
                     >
-                        <Text fontSize={{base: '1rem', md: '1.3rem'}}>Login/register</Text>
+                        <Text fontSize={{base: '1rem', md: '0.9rem'}}>Login/register</Text>
                     </Button>
                     <ButtonElement label='Add Property' icon={MdArrowOutward} />
                 </Stack>
             </Flex>
                 <Collapse in={isOpen} transition={{exit: {delay: 1}, enter: {duration: 0.5}}} animateOpacity><MobileNav /></Collapse>
 
-        </>
+        </Container>
 
     );
 }
 
-
-
-export const DesktopNav = () => {
+export const DesktopNav = ({to}: NavItem) => {
     const linkColor = useColorModeValue('green.600', 'green.300');
     const linkHoverColor = useColorModeValue('green.800', 'white');
     return (
@@ -91,9 +89,14 @@ export const DesktopNav = () => {
                     display={{base:'flex', md:'flex'}}
                      key={navItem.label}>
                     <Link
+                        to={to}
+                        offset={200}
+                        smooth={true}
+                        spy={true}
                         gap={8}
                         fontWeight={400}
                         _hover={{textDecoration: 'none'}}
+                        className='cursor-pointer'
                         >{navItem.label}
                     </Link>
                     <Box className=' w-[0.4rem] h-[3px] bg-[#fff]' />
@@ -133,26 +136,31 @@ const MobileNavItem = ({label, href}: NavItem) => {
 }
 
 interface NavItem {
-    label: string,
+    label?: string,
     children?: Array<NavItem>,
     href?: string,
+    to: string,
 }
 const NAV_Items: Array<NavItem> = [
     {
         label: 'home',
-        href: '#'
+        to: 'home'
     },
     {
         label: 'listings',
-        href: '#'
+        to: 'listings'
     },
     {
-        label: 'blog',
-        href: '#'
+        label: 'explore',
+        to: 'explore'
     },
     {
-        label: 'pages',
-        href: '#'
-    }
+        label: 'testimonials',
+        to: 'testimonials'
+    },
+    {
+        label: 'agents',
+        to: 'agents'
+    },
 ]
 

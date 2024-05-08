@@ -46,10 +46,9 @@ function Explore() {
     }
 
     return (
-        <Container my={{base:'14vh', md:'9vh'}} maxW={'container.lg'}>
-           <Box gap={{base:'0.8rem', md:'1rem'}}
-                width={'100%'}
-           >
+        <Container id='explore' my={{base:'34vh', md:'10vh'}} minH={{sm:'75dvh', md:'90vh'}} maxW={'container.lg'}>
+           <Box gap={{base:'0.8rem', md:'1rem'}} className='p-2'
+                width={'100%'}>
                <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
                    <Box>
                        <Text fontSize={{base:'1.6rem', md:'2.5rem'}} className='font-bold'>

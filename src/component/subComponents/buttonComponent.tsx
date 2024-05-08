@@ -21,14 +21,13 @@ export function ButtonElement({label, icon, ref, onclick}: ButtonProps) {
             spacing={4}
             as={'a'}
             display={{base: 'none', md:'inline-flex'}}
-            fontSize={'sm'}
+            fontSize='12px'
             href={'#'}
             color={'white'}
+            colorScheme='none'
             width={{base:'5rem', md:'7rem'}}
-            bg={'#1e1e1e'}
-            _hover={{bg: '#F58629'}}
             borderRadius={'4px'}
-            className='cursor-pointer hover:shadow-sm'
+            className='cursor-pointer rounded-full p-2 hover:shadow-sm border border-sm border-white'
             onClick={() => setShowModal(true) && onclick}>
             {label}
             <span>{icon && <Icon size={'10px'} as={icon}/>}</span>

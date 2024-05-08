@@ -22,10 +22,10 @@ export default function PricingComponent({tag, price, text, list_one, list_two, 
     const[active, setActive] = useState(false)
     return (
             <>
-                <Stack spacing={2}>
+                <Stack spacing={2} p={2}>
                     <Text className='font-semibold text-[13px] md:text-[1.3rem]'>{tag}</Text>
                     <Text className='font-bold text-[17px] md:text-[1.9rem]'>${price}</Text>
-                    <Text fontSize={{sm:'12px', md:'15px'}} className='md:w-[16rem] w-[10rem] opacity-70 font-light mt-4'>
+                    <Text fontSize={{sm:'12px', md:'15px'}} className='md:w-[16rem] w-[10rem] opacity-70 font-light mt-4 mb-4'>
                         {text}
                     </Text>
 

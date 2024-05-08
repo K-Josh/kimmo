@@ -6,6 +6,7 @@ import Explore from "@/component/_landingPage/Explore";
 import Modals from "@/component/modals/Modals";
 import Footer from "@/component/_landingPage/Footer";
 import Pricing from "@/component/_landingPage/Pricing";
+import Testimonials from "@/component/_landingPage/Testimonials";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
      <FindHome />
      <NewListing />
      <Explore />
+     <Testimonials />
      <Pricing />
      <Footer />
     </>

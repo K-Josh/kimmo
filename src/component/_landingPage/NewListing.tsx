@@ -47,8 +47,8 @@ function NewListing() {
         ]
     }
 
-    return <Container my={{base:'14vh', md:'13vh'}} maxW={'container.lg'}>
-         <Box gap={{base:'2.8rem', md:'3rem'}}>
+    return <Container id='listings' my={{base:'-30vh', md:'-7.9vh'}} minH={{sm:'75dvh', md:'98vh'}} maxW={'container.lg'}>
+         <Box gap={{base:'2.8rem', md:'3rem'}} className='p-2'>
            <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
               <Box>
                   <Text fontSize={{base:'1.6rem', md:'2.5rem'}} className='font-bold'>

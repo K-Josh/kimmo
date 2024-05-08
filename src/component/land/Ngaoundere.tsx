@@ -24,7 +24,7 @@ interface LandData {
 const data: LandData = {
     landTitle: 'Information about the land',
     landDescription: 'Located at Etoudi',
-    landPrice: '700,000CFA/m',
+    landPrice: '7000CFA/m',
     cardTitle: 'Ngaoundere',
     cardListItems: [
         {
@@ -52,9 +52,9 @@ const data: LandData = {
     Data: [
         {
             title: 'Formule à distance',
-            price: '700,000 FCFA',
+            price: '10,000 FCFA',
             superficial: '300 sqft',
-            text: 'Accès à une connexion internet illimitée'
+            text: 'Situé À 3 Km De L\'axe National N°1 Plus Précisement Entrée Ecole De Nkometou III Juste Après Le Péage. Zone Électrifiée Et Accessible En Voiture Jusque Dans Le Site.'
         }
     ]
 }

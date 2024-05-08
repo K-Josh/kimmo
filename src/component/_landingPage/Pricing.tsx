@@ -18,8 +18,8 @@ function Pricing() {
             <Box className='flex flex-col md:flex-row gap-y-[3rem] md:gap-4'>
                 {pricing.map((price, index) => (
                      <Box className={`gap-4 ${index === 1 ?
-                         'shadow-xl bg-orange-100 animated_card hover:rounded-md' : ''} 
-                         cursor-pointer p-[1rem] md:w-[350px] w-[250px] md:h-[445px] h-[370px] mt-[-2rem] shadow-sm border border-gray-100`}
+                         'shadow-xl bg-orange-100' : 'hover:shadow-xl hover:bg-orange-100'} 
+                         cursor-pointer p-[1rem] md:w-[350px] w-[250px] md:h-[445px] h-[370px] mt-[-2rem] shadow-sm border border-gray-100 transition-all ease-out duration-500`}
                           key={price.id}>
                          <PricingComponent
                              icon={FaCircleCheck}

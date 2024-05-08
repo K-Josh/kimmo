@@ -26,12 +26,12 @@ function LandData() {
                 {!isNewWindow && <NewWindowNavbar />}
              </Box>
                 <Flex>
-                    <Box my={{sm:'13vh', md:'25vh'}} mx={{sm:'-13rem', md:'-45rem'}} className='absolute z-1'>
+                    <Box my={{sm:'13vh', md:'25vh'}} mx={{sm:'-13rem', md:'-46rem'}} className='absolute z-1'>
                             <Text className={`relative font-primary opacity-100 text-white text-[1.2rem] md:text-[2.8rem] ${isOpen && 'opacity-0'}`}>
                                 Live at your own pace
                             </Text>
                         {!isOpen &&
-                            <Heading fontSize={{sm:'13px', md:'1.8rem'}} color='white' mx={{md:'12px'}}>{data.landTitle}</Heading>
+                            <Heading fontSize={{sm:'13px', md:'1.8rem'}} color='white' mx={{md:'5px'}}>{data.landTitle}</Heading>
                             }
                         <Link display={{sm:'none', md:'inline-flex'}} _hover='' className='hover:underline-none' as={NextLink} href='/'>
                             <Button mt='1rem'
@@ -72,14 +72,14 @@ function LandData() {
                 className={`relative z-1 ${isOpen ? 'my-5rem' : 'my-0'} transition-all duration-500 ease-in-out`}
             >
                 <Flex
-                    mt={{sm:'-13rem', md:'-15rem'}}
+                    mt={{sm:'-13rem', md:'-18rem'}}
                     bg={'#fff'}
                     p={2}
                     className='shadow-md rounded-md'
-                    width={{sm:'84%', md:'30%'}}
-                    height={'20%'}
+                    width={{sm:'84%', md:'40%'}}
+                    height={{sm:'20%', md:'40%'}}
                     flexDirection={'column'}
-                    mx={{sm:'8px', md:'19rem'}}
+                    mx={{sm:'8px', md:'13rem'}}
                 >
                     <HStack p={4} display={'flex'} justify={'space-between'}>
                         <Box>

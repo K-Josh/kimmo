@@ -7,9 +7,9 @@ import {SearchIcon} from "@chakra-ui/icons";
 
 function Hero() {
     return (
-        <div className='back min-h-[87vh]'>
+        <div className='back md:min-h-[75vh]'>
             <Navbar />
-          <Flex p={{base:2,md:1}}
+          <Flex p={{sm:2,md:1}}
                 justifyContent={{base:'', md:'space-between'}}
               flex={{base: '1', md: '1'}}
                width={'100%'}>
@@ -31,10 +31,10 @@ function Hero() {
                          mx={{base:'', md:'4rem'}} py={{base:'', md:'0.4rem'}}
                            gap={3}>
                          <Text my={{base:'-2rem', md:'-2.1rem'}}
-                               fontSize={{base:'15px', md:'15px'}}
+                               fontSize={'15px'}
                                className='relative text-gray-500 cursor-pointer font-semibold opacity-90 whitespace-nowrap'>For Sale</Text>
-                         <Text my={{base:'', md:'-2.1rem'}}
-                               fontSize={{base:'-2rem', md:'15px'}}
+                         <Text my={{base:'-2rem', md:'-2.1rem'}}
+                               fontSize={'15px'}
                                className='relative text-gray-500 cursor-pointer font-semibold opacity-90 whitespace-nowrap'>For Rent</Text>
                      </Flex>
                       <Box bg={'white'} height={{base:'3.5rem', md:'5rem'}}
@@ -47,8 +47,8 @@ function Hero() {
                                      my={{md:10, base: 6}}  />
                               <IconButton
                                   borderRadius={'full'}
-                                  bg={'#008374'}
-                                  _hover={{bg: '#008350'}}
+                                  bg={'orange.400'}
+                                  _hover={{bg: 'orange.300'}}
                                     className='mx-[5px]'
                                   icon={<SearchIcon className='text-white'/>}  aria-label={'search'}/>
                           </Flex>

@@ -17,7 +17,7 @@ body {
 }
 
 .back {
-    background-image: url("/house.jpg");
+    background-image: url("/houses.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -37,4 +37,9 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 3px solid white;  /* creates padding around scroll thumb */
 }
-/*EB6753*/
+
+@media (max-width: 768px) {
+    .back {
+        height: 68%;
+    }
+}

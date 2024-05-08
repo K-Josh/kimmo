@@ -48,15 +48,16 @@ export function ListingCard({title, text, icon, perimeter,
 
     return (
         <Box width={{base:'16rem', md:'18rem'}}
-             height={'23.2rem'}
+             height={{sm:'23.2rem'}}
             className='border-b border-gray-100 rounded-t-md'>
-           <Skeleton isLoaded={!isLoaded}>
+           
                <a href={link}>
                    <Box className='relative'>
                        <Box my={{base:'0.7rem', md:'0.8rem'}} mx={{base:'0.5rem', md:'5px'}} className='absolute p-3'>
                            <ListingButton label='Features' icon={AiOutlineThunderbolt} />
                        </Box>
                        <Image
+                          loading="lazy"
                            boxSize={{base:'sm', md:'md'}}
                            className='h-[13rem] rounded-t-md'
                            src={image} alt='image' />
@@ -109,7 +110,7 @@ export function ListingCard({title, text, icon, perimeter,
                        </Flex>
                    </Stack>
                </a>
-           </Skeleton>
+
         </Box>
 
     )
@@ -120,19 +121,22 @@ export function MapCard({icon, image, title, properties_1}: CardProps) {
         <Box width={{base:'16rem', md:'20rem'}}
              justifyContent={{base:'center'}}
              alignItems={{base: 'center'}}
-             height={{base:'20rem' ,md:'23rem'}}>
+             height={{base:'20rem'}}>
             {/* location icon */}
             <Box>
-                 <Box className='bg-blue-400 relative'></Box>
-                     <Image src={image}
-                            className='h-[13rem] hover:scale-95 cursor-pointer
-                            rounded-md transition-all ease-in-out duration-300'
-                            alt='map' />
-                     <Image src={icon}
-                            my='-7rem'
-                            mx='6rem'
-                            className='cursor-pointer rounded-full bg-white p-1 text-[#008374] w-7 h-7 absolute'
-                            as={GrMapLocation} />
+                <Box className='bg-blue-600'></Box>
+              <Image 
+                loading="lazy"
+                src={image}
+                className='h-[13rem] bg-blue-700 hover:scale-95 cursor-pointer rounded-md transition-all ease-in-out duration-300'
+                alt='map' />
+             <Image 
+               src={icon}
+               alt='location'
+               my='-7rem'
+               mx='6rem'
+              className='cursor-pointer rounded-full bg-white p-1 text-[#F58629] w-7 h-7 absolute'
+               as={GrMapLocation} />
 
             </Box>
             <Box className='p-2'>
