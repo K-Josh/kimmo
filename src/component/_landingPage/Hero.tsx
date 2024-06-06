@@ -17,7 +17,7 @@ function Hero() {
                   zIndex={1}
                   spacing={7}
                   my={{base:'5rem', md: '7rem'}}
-                  px={{md: '6rem'}}>
+                  mx={{sm:'', md:'6rem'}}>
                 <Heading
                     w={{base: '15rem', md: '28rem'}} as='h2'
                     color='white' >

@@ -1,6 +1,6 @@
 "use client"
 import React, {useState} from 'react';
-import {Box, Text, Flex, Heading, HStack, Button, Image, useDisclosure} from "@chakra-ui/react";
+import {Box, Text, Flex, Heading, HStack, Button, Image} from "@chakra-ui/react";
 import {LandsButton} from "@/component/subComponents/buttonComponent";
 import Footer from "@/component/_landingPage/Footer";
 import {Icon} from "@chakra-ui/icons";
@@ -19,14 +19,14 @@ function LandData() {
     const{isNewWindow} = useState(false);
     const {isOpen} = useState(false);
     return (
-        <>
+        <div x-data="{ isOpen: false }">
             <Flex>
-                <Box className='bg-[#F58634] w-[73vw] relative z-1 md:h-[560px] h-[450px] rounded-br-full rounded-bl-3xl '>
+                <Box className='bg-[#F58634] w-[150%] md:w-[73vw] relative z-1 md:h-[560px] h-[450px] rounded-br-full rounded-bl-3xl '>
                     {isNewWindow && <Navbar/>}
                     {!isNewWindow && <NewWindowNavbar />}
-                </Box>
-                <Flex>
-                    <Box my={{sm:'13vh', md:'25vh'}} mx={{sm:'-13rem', md:'-46rem'}} className='absolute z-1'>
+                 </Box>
+            <Flex>
+                    <Box my={{sm:'19vh', md:'25vh'}} mx={{sm:'-27.5rem', md:'-46rem'}} className='absolute z-1'>
                         <Text className={`relative font-primary opacity-100 text-white text-[1.2rem] md:text-[2.8rem] ${isOpen && 'opacity-0'}`}>
                             Live at your own pace
                         </Text>
@@ -53,11 +53,11 @@ function LandData() {
                         initial="hidden"
                         whileInView={"show"}
                         viewport={{once: false, amount: 0.3}}
-                        display={{base:'none', md:'flex'}}
+                        display={{sm:'none', md:'flex'}}
                         className='relative mx-[-10rem] my-[20vh]'>
                         <Image src='../figma.png' boxSize='300px'
                                display={{sm:'none', md:'inline-flex'}}
-                               className='transition-all duration-500 ease-in cursor-pointer hover:scale-95'
+                               className='invisible md:visible transition-all duration-500 ease-in cursor-pointer hover:scale-95'
                                height='400px' alt='image' />
                     </motion.Box>
                 </Flex>
@@ -72,25 +72,25 @@ function LandData() {
                 className={`relative z-1 ${isOpen ? 'my-5rem' : 'my-0'} transition-all duration-500 ease-in-out`}
             >
                 <Flex
-                    mt={{sm:'-13rem', md:'-18rem'}}
-                    bg={'#fff'}
+                    mt={{sm:'-17rem', base:'25vh', md:'-18.6rem'}}
+                    bg={'blackAlpha.900'}
                     p={2}
                     className='shadow-md rounded-md'
-                    width={{sm:'84%', md:'40%'}}
-                    height={{sm:'20%', md:'40%'}}
+                    width={{sm:'70%', base:'60%', md:'40%'}}
+                    height={{sm:'30%', base:'40%', md:'40%'}}
                     flexDirection={'column'}
-                    mx={{sm:'8px', md:'13rem'}}
+                    mx={{sm:'5rem', md:'12.5rem'}}
                 >
                     <HStack p={4} display={'flex'} justify={'space-between'}>
                         <Box>
-                            <Text className='font-semibold'>{data.landDescription}</Text>
-                            <Text className='font-light'>{data.landPrice}<sup>2</sup></Text>
+                            <Text color={'#fff'} className='font-semibold'>{data.landDescription}</Text>
+                            <Text color={'#fff'} className='font-light'>{data.landPrice}<sup>2</sup></Text>
                         </Box>
                     </HStack>
                     {data.Data.map((item, index) => (
                         <Box p={1}>
-                            <Text >{item.title}</Text>
-                            <Text>{item.text}</Text>
+                            <Text color={'#fff'}>{item.title}</Text>
+                            <Text color={'#fff'}>{item.text}</Text>
                             <Box  className='flex justify-end'>
                                 <Button _hover={{bg: 'orange.500'}} size='sm' className='bg-orange-400 text-white'>
                                     <Text className='font-light'>{item.superficial}</Text>
@@ -100,9 +100,11 @@ function LandData() {
                     ))}
                 </Flex>
             </motion.Box>
-            <NewListing />
+             <Box mt={{sm:'12rem', md:'4rem'}}>
+              <NewListing />
+             </Box>
             <Footer />
-        </>
+        </div>
     );
 }
 

@@ -47,7 +47,7 @@ export function ListingCard({title, text, icon, perimeter,
     const [isLoaded, setIsLoaded] = useState(false)
 
     return (
-        <Box width={{base:'16rem', md:'18rem'}}
+        <Box width={{sm:'16rem', md:'18rem'}}
              height={{sm:'23.2rem'}}
             className='border-b border-gray-100 rounded-t-md'>
            

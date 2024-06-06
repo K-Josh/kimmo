@@ -26,7 +26,7 @@ function Testimonials({ testimonials }: TestimonialProps) {
   }, [testimonialS]);
 
   return (
-    <Container id="testimonials" minHeight={{ sm: '', md: '85vh' }} maxW="md">
+    <Container id="testimonials" minHeight={{ sm: '', md: '89vh' }} mt={{md:'10vh'}} maxW="md">
       <Box className="mb-[2rem] gap-4 flex flex-col justify-center items-center mx-auto">
         <Text className="font-semibold" fontSize={{ md: '2rem', sm: '1rem' }}>
           Testimonials

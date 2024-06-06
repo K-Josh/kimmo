@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.animated_card::before {
+/* .animated_card::before {
     position: absolute;
     margin-top: -1.3rem;
     margin-left: -1.5rem;
@@ -22,7 +22,8 @@
     50% {
         filter: hue-rotate(350deg);
     }
-}
+} */
+
 @layer base {
     body{
         @apply font-primary

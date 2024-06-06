@@ -22,7 +22,7 @@ export function NewWindowNavbar() {
         <Container MaxW='550px' className='relative fixed mt-0 top-0'>
             <Flex
                 py={{base: 3}}
-                px={{base: 4}}
+                mx={{base: '-1rem'}}
                 align={'center'}
                 className='md:gap-[4rem]'
             >
@@ -36,16 +36,16 @@ export function NewWindowNavbar() {
                         onClick={onToggle}
                         variant='none'
                         aria-label={'Toggle'}
-                        icon={isOpen ? <CloseIcon className='text-1rem' color={'white'} w={2} h={2} />
-                            : <HamburgerIcon className='text-1rem' color={'white'} w={2} h={2} />}/>
+                        icon={isOpen ? <CloseIcon className='text-1rem' color={'white'} w={4} h={4} />
+                            : <HamburgerIcon className='text-1rem' color={'white'} w={4} h={4} />}/>
                 </Flex>
             {/*Navbar for this particular page*/}
                <Box className='flex items-center justify-between md:gap-[13rem] '>
                    <Flex
-                       flex={{base: 1}} mx={{base: 'auto', md:'-5rem'}}
+                       flex={{base: 1}} mx={{base: 'auto', md:'-2rem'}}
                        align={{md: 'center'}} justify={{base: 'center', md:'start'}}
                        >
-                       <Text fontWeight={500} fontSize={{base: '0.8rem', md: '2rem'}} className='text-white whitespace-nowrap uppercase'>
+                       <Text fontWeight={500} fontSize={{base: '0.8rem', md: '2rem'}} className='text-white whitespace-nowrap uppercase font-bold'>
                            Kimmo Deals
                        </Text>
 

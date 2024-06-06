@@ -47,11 +47,13 @@ function NewListing() {
         ]
     }
 
-    return <Container id='listings' my={{base:'-30vh', md:'-7.9vh'}} minH={{sm:'75dvh', md:'98vh'}} maxW={'container.lg'}>
+    return <Container id='listings' my={{sm:'2rem', md:'1.8vh'}} minH={{sm:'75dvh', md:'98vh'}} maxW={'container.lg'}>
          <Box gap={{base:'2.8rem', md:'3rem'}} className='p-2'>
            <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
               <Box>
-                  <Text fontSize={{base:'1.6rem', md:'2.5rem'}} className='font-bold'>
+                  <Text fontSize={{sm:'1.6rem', md:'2.5rem'}} 
+                    width={{sm:'13rem', md:'full'}}
+                  className='font-bold'>
                       Discover our Featured Listings
                   </Text>
               </Box>

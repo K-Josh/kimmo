@@ -1,25 +1,43 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Box, Button, Collapse, Container,
     Flex, IconButton,
     Stack, Text,
     useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
-import { Link } from 'react-scroll';
 import {HamburgerIcon, CloseIcon, Icon} from "@chakra-ui/icons"
 import {MdArrowOutward} from "react-icons/md";
 import {ButtonElement} from "@/component/subComponents/buttonComponent";
+import Link from 'next/link';
 
 export default function Navbar() {
     const {isOpen, onToggle} = useDisclosure();
+    const [header, setHeader] = useState(false);
+
+    const scrollHeader = () => {
+        if(window.scrollY >= 20) {
+            setHeader(true);
+        } else {
+            setHeader(false)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollHeader)
+
+        return () => {
+            window.addEventListener('scroll', scrollHeader)
+        }
+    }, [])
+
     return (
-        <Container maxW='550px'>
+        <Container className={header ? 'fixed bg-[#020202] flex flex-col md:flex-row md:justify-center z-10 min-w-[100%] text-white' : 'bg-transparent'} maxW='550px'>
             <Flex
-                className='text-[#fff] md:gap-[2rem] md:mx-[-9rem]'
+                className='text-[#fff] items-center md:gap-[2rem] md:mx-[-9rem]'
                 py={{base: 3}}
                 px={{md: '1px', sm:2}}
-                align={'center'}
+                justify={'center'}
             >
                 <Flex
                     flex={{base: 1, md: 'auto'}}
@@ -29,10 +47,11 @@ export default function Navbar() {
                     <IconButton
                         onClick={onToggle}
                         size='md'
-                        _hover={{bg: 'green.500'}}
+                        bg={'#F58629'}
+                        _hover={{bg: '#f39345'}}
                         aria-label={'Toggle'}
-                        icon={isOpen ? <CloseIcon color={'white'} w={2} h={2} />
-                            : <HamburgerIcon color={'white'} w={2} h={2} />}/>
+                        icon={isOpen ? <CloseIcon color={'white'} w={4} h={4} />
+                            : <HamburgerIcon color={'white'} w={4} h={4} />}/>
                 </Flex>
                 <Flex
                     flex={{base: 1}} mx={{base: 'auto'}}
@@ -67,7 +86,7 @@ export default function Navbar() {
                     >
                         <Text fontSize={{base: '1rem', md: '0.9rem'}}>Login/register</Text>
                     </Button>
-                    <ButtonElement label='Add Property' icon={MdArrowOutward} />
+                  <ButtonElement label='Add Property' icon={MdArrowOutward} />
                 </Stack>
             </Flex>
                 <Collapse in={isOpen} transition={{exit: {delay: 1}, enter: {duration: 0.5}}} animateOpacity><MobileNav /></Collapse>
@@ -77,26 +96,20 @@ export default function Navbar() {
     );
 }
 
-export const DesktopNav = ({to}: NavItem) => {
-    const linkColor = useColorModeValue('green.600', 'green.300');
-    const linkHoverColor = useColorModeValue('green.800', 'white');
+export const DesktopNav = () => {
+   
     return (
         <Stack direction={'row'} spacing={5}>
             {NAV_Items.map((navItem) => (
                 <Box alignItems={'center'}
-                     justifyContent={'center'}
                      gap={1}
                     display={{base:'flex', md:'flex'}}
                      key={navItem.label}>
                     <Link
-                        to={to}
-                        offset={200}
-                        smooth={true}
-                        spy={true}
-                        gap={8}
-                        fontWeight={400}
-                        _hover={{textDecoration: 'none'}}
-                        className='cursor-pointer'
+                     href={`/${navItem.href}`}
+                     scroll
+                     prefetch
+                      className='gap-7 link_active font-light hover:no-underline cursor-pointer'
                         >{navItem.label}
                     </Link>
                     <Box className=' w-[0.4rem] h-[3px] bg-[#fff]' />
@@ -108,7 +121,7 @@ export const DesktopNav = ({to}: NavItem) => {
 
 export const MobileNav =() => {
     return (
-      <Stack p={2} className='w-[100vw] z-1' bg={useColorModeValue('blackAlpha.700','white')}>
+      <Stack p={2} className='w-full items-center rounded-md z-2'>
           {NAV_Items.map((navItem) => (
             <MobileNavItem key={navItem.label} {...navItem} />
           ))}
@@ -125,9 +138,9 @@ const MobileNavItem = ({label, href}: NavItem) => {
             align={'center'}
             _hover={{textDecoration: 'none'}}
            as={Link}
-           href={href ?? '#'}
+           href={href}
           >
-            <Text fontWeight={400} color={useColorModeValue('white', 'green.500')}>
+            <Text fontWeight={400} className='hover:text-[#F58629] hover:transition-all hover:duration-400 width-full' color={useColorModeValue('white', 'green.500')}>
                 {label}
             </Text>
           </Flex>
@@ -139,28 +152,27 @@ interface NavItem {
     label?: string,
     children?: Array<NavItem>,
     href?: string,
-    to: string,
 }
 const NAV_Items: Array<NavItem> = [
     {
         label: 'home',
-        to: 'home'
+        href: '/'
     },
     {
         label: 'listings',
-        to: 'listings'
+        href: '#listings'
     },
     {
         label: 'explore',
-        to: 'explore'
+        href: '#explore'
     },
     {
         label: 'testimonials',
-        to: 'testimonials'
+        href: '#testimonials'
     },
     {
         label: 'agents',
-        to: 'agents'
+        href: '#agents'
     },
 ]
 

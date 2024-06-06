@@ -46,7 +46,7 @@ function Explore() {
     }
 
     return (
-        <Container id='explore' my={{base:'34vh', md:'10vh'}} minH={{sm:'75dvh', md:'90vh'}} maxW={'container.lg'}>
+        <Container id='explore' justifyContent={'center'} mt={{base:'34vh', md:'10vh'}} maxH={{sm:'75dvh', md:'85vh'}} maxW={'container.lg'}>
            <Box gap={{base:'0.8rem', md:'1rem'}} className='p-2'
                 width={'100%'}>
                <Box className='flex flex-col md:flex-row md:items-center md:justify-between' mb={'2rem'}>
