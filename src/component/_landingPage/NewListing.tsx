@@ -62,7 +62,7 @@ function NewListing() {
                    <Text fontSize={'0.8rem'}>
                        See All Properties
                        <IconButton aria-label='up arrow' colorScheme='none'
-                                   icon={<MdArrowOutward className='text-[#1e1e1e]' />} />
+                       icon={<MdArrowOutward className='text-[#1e1e1e]' />} />
                    </Text>
                </Box>
            </Box>

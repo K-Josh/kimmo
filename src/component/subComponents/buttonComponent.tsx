@@ -13,6 +13,35 @@ interface ButtonProps {
     ref?: any;
     onClick?: () => void;
 }
+
+export function ButtonKimmo({label}: ButtonProps) {
+    return (
+        <Button 
+          width={{base:'4rem', md:'6rem'}}
+          height={{base:'2rem', md:'2.4rem'}}
+          color='#ffff'
+          fontSize={'13px'}
+          _hover={{bg:'orange.400'}}
+           className='bg-tertiary'
+       >
+        {label}
+      </Button>
+    )
+}
+export function ButtonVariant({label}: ButtonProps) {
+    return (
+        <Button
+        width={{base:'4rem', md:'6.5rem'}}
+        height={{base:'2rem', md:'2.4rem'}}
+        colorScheme='#DE6F19'
+        variant='outline'
+        className='text-tertiary'
+        >
+           {label}
+       </Button>
+    )
+}
+
 export function ButtonElement({label, icon, ref, onclick}: ButtonProps) {
     const [showModal, setShowModal] = useState(false)
     return (
@@ -41,7 +70,6 @@ export function ButtonElement({label, icon, ref, onclick}: ButtonProps) {
 export function ListingButton({onclick, icon, label}: ButtonProps) {
     return (
         <Button
-            spacing={4}
             as={'a'}
             display={{base: 'inline-flex', md:'inline-flex'}}
             fontSize={'sm'}
@@ -96,25 +124,6 @@ export function PricingButtonActive({label, onclick}: ButtonProps) {
                 </span>
             </Button>
 }
-export function PricingButton({label, onclick}: ButtonProps) {
-    return <Button
-                spacing={2}
-                fontSize={'sm'}
-                href={'#'}
-                color={'blackAlpha.400'}
-                p={{sm:'0.5rem', md:'1rem'}}
-                variant='outline'
-                colorScheme='#F58629'
-                _hover={{bg: '#F58619'}}
-                borderRadius={'4px'}
-                className='hover:shadow-sm'
-                onClick={onclick}>
-                {label}
-                <span>
-                     <IconButton aria-label='up arrow' colorScheme='none'
-                                 icon={<MdArrowOutward className='text-[#fff]' />} />
-                </span>
-            </Button>
-}
+
 
 

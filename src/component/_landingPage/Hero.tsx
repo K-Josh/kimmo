@@ -1,66 +1,42 @@
 "use client"
+import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
-import {Box, Flex, Text, Heading, Stack, Input, IconButton} from "@chakra-ui/react";
-import Navbar from "@/component/_landingPage/Navbar";
-import {SearchIcon} from "@chakra-ui/icons";
-
+import { ButtonKimmo } from '../subComponents/buttonComponent';
 
 function Hero() {
-    return (
-        <div className='back md:min-h-[75vh]'>
-            <Navbar />
-          <Flex p={{sm:2,md:1}}
-                justifyContent={{base:'', md:'space-between'}}
-              flex={{base: '1', md: '1'}}
-               width={'100%'}>
-              <Stack
-                  zIndex={1}
-                  spacing={7}
-                  my={{base:'5rem', md: '7rem'}}
-                  mx={{sm:'', md:'6rem'}}>
-                <Heading
-                    w={{base: '15rem', md: '28rem'}} as='h2'
-                    color='white' >
-                    Find the perfect plan to Live with your family
-                </Heading>
-                  <Box py={'2rem'} bg={'white'}
-                       height={{base: '2rem', md:'3.5rem'}}
-                       className='rounded-bl-none rounded-br-none'
-                       width={{base:'9rem', md:'13rem'}} borderRadius={'10px'}>
-                     <Flex
-                         mx={{base:'', md:'4rem'}} py={{base:'', md:'0.4rem'}}
-                           gap={3}>
-                         <Text my={{base:'-2rem', md:'-2.1rem'}}
-                               fontSize={'15px'}
-                               className='relative text-gray-500 cursor-pointer font-semibold opacity-90 whitespace-nowrap'>For Sale</Text>
-                         <Text my={{base:'-2rem', md:'-2.1rem'}}
-                               fontSize={'15px'}
-                               className='relative text-gray-500 cursor-pointer font-semibold opacity-90 whitespace-nowrap'>For Rent</Text>
-                     </Flex>
-                      <Box bg={'white'} height={{base:'3.5rem', md:'5rem'}}
-                            className='rounded-tl-none'
-                            width={{base:'19rem', md:'40rem'}} borderRadius={'10px'}>
-                          <Flex align={'center'} justifyContent={'center'}>
-                              <Input variant='unstyled'
-                                     className='placeholder:pl-[1rem]'
-                                   placeholder='Enter the area you want to search'
-                                     my={{md:10, base: 6}}  />
-                              <IconButton
-                                  borderRadius={'full'}
-                                  bg={'orange.400'}
-                                  _hover={{bg: 'orange.300'}}
-                                    className='mx-[5px]'
-                                  icon={<SearchIcon className='text-white'/>}  aria-label={'search'}/>
-                          </Flex>
-                      </Box>
-                  </Box>
-                  <Box className='relative my-[4rem]'>
-                      <Text fontSize={{base:'10px', md:'14px'}} className='text-white'>Or browse featured categories:</Text>
-                  </Box>
-              </Stack>
-          </Flex>
-        </div>
-    );
+  return (
+    <div className='min-h-[80vh] w-full'>
+      <Box className='w-full'>
+        <img src='/home1.jfif' alt='hero' className='w-full h-[380px]' />
+      </Box>
+
+      <Box display={{base:'', md:'flex'}} mt={2} mx={'10vw'}>
+        <Flex className='space-x-[18.5rem]' alignItems='center'>
+         <Box> 
+          <Text fontSize='3xl' className='font-bold w-[300px]' >
+             Find Your Dream Property With Us.
+          </Text>
+          </Box>
+          <Stack>
+            <Text className='font-extralight opacity-90 text-[15px] w-[500px]'>Welcome to Kimmo Deals, your trusted source for buying and selling properties. Explore our wide range of listings and find the perfect property for your needs.</Text>
+            <Flex gap={2}>
+              <ButtonKimmo label='Search' />
+              <Button
+                 width={{base:'4rem', md:'6rem'}}
+                  height={{base:'2rem', md:'2.4rem'}}
+                  fontSize={'sm'}
+                  colorScheme='#DE6F19'
+                   variant='outline'
+                   className='text-tertiary'
+                         >
+                  Learn More
+                </Button>
+            </Flex>
+          </Stack>
+        </Flex>
+      </Box>
+    </div>
+  );
 }
 
 export default Hero;

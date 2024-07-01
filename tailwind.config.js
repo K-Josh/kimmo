@@ -24,6 +24,11 @@ module.exports = {
         "2xl": "1400px"
       },
     },
+    colors: {
+      primary: "#ffff",
+      secondary: "#1e1e1e",
+      tertiary: "#DE6F19",
+    },
     extend: {
       backgroundImage: {
         background: "url('kimmo-deals/public/housebg.jpg')"

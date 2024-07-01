@@ -2,14 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import {
     Box, Button, Collapse, Container,
-    Flex, IconButton,
+    Flex, HStack, IconButton,
     Stack, Text,
     useColorModeValue, useDisclosure
 } from "@chakra-ui/react";
 import {HamburgerIcon, CloseIcon, Icon} from "@chakra-ui/icons"
 import {MdArrowOutward} from "react-icons/md";
-import {ButtonElement} from "@/component/subComponents/buttonComponent";
+import {ButtonElement, ButtonKimmo, ButtonVariant} from "@/component/subComponents/buttonComponent";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
     const {isOpen, onToggle} = useDisclosure();
@@ -32,12 +33,11 @@ export default function Navbar() {
     }, [])
 
     return (
-        <Container className={header ? 'fixed bg-[#020202] flex flex-col md:flex-row md:justify-center z-10 min-w-[100%] text-white' : 'bg-transparent'} maxW='550px'>
+        <Box className={header ? 'fixed bg-[#020202] flex flex-col md:flex-row md:justify-center z-10 min-w-[100%] text-white' : 'bg-transparent'} >
             <Flex
-                className='text-[#fff] items-center md:gap-[2rem] md:mx-[-9rem]'
+                className='text-[black] md:gap-[2rem]'
                 py={{base: 3}}
-                px={{md: '1px', sm:2}}
-                justify={'center'}
+                px={{md: '3rem', sm:2}}
             >
                 <Flex
                     flex={{base: 1, md: 'auto'}}
@@ -53,45 +53,21 @@ export default function Navbar() {
                         icon={isOpen ? <CloseIcon color={'white'} w={4} h={4} />
                             : <HamburgerIcon color={'white'} w={4} h={4} />}/>
                 </Flex>
-                <Flex
-                    flex={{base: 1}} mx={{base: 'auto'}}
-                    align={{md: 'center'}} justify={{base: 'center', md:'start'}}>
-                    <Text fontWeight={500} fontSize={{base: '0.8rem', md: '2rem'}} className='md:gap-[2rem] whitespace-nowrap uppercase'>
-                        Kimmo Deals
-                    </Text>
-                    <Flex
-                        className='relative mx-0 md:mx-[2rem] md:gap-[2rem]'
-                        display={{base: 'none', md: 'flex'}}
-                        flex={{base: 1, md: 0}}
-                        justify={'flex-end'}
-                        direction={'row'}
-                        spacing={8}
-                    >
+                {/* logo div and desktop navs */}
+                 <Box className='flex flex-col md:flex-row justify-between'>
+                    <Box>
+                        <Image src='/logo.png' alt='logo' width={100} height={100} />
+                    </Box>
+                     <Box display={'inline-flex'} gap={3}>
                         <DesktopNav />
-                    </Flex>
-                </Flex>
-                <Stack
-                    flex={{base: 1, md:0}}
-                    direction={'row'}
-                    spacing={4}
-                >
-                    <Button
-                        as={'a'}
-                        fontSize={'sm'}
-                        fontWeight={300}
-                        colorScheme='none'
-                        href={'#'}
-                        color={'whiteAlpha.900'}
-                        px={4}
-                    >
-                        <Text fontSize={{base: '1rem', md: '0.9rem'}}>Login/register</Text>
-                    </Button>
-                  <ButtonElement label='Add Property' icon={MdArrowOutward} />
-                </Stack>
+                       <ButtonVariant label='Learn'/>
+                        <ButtonKimmo label='Sign Up' />
+                     </Box>
+                 </Box>
             </Flex>
                 <Collapse in={isOpen} transition={{exit: {delay: 1}, enter: {duration: 0.5}}} animateOpacity><MobileNav /></Collapse>
 
-        </Container>
+        </Box>
 
     );
 }
@@ -99,7 +75,7 @@ export default function Navbar() {
 export const DesktopNav = () => {
    
     return (
-        <Stack direction={'row'} spacing={5}>
+        <Stack direction={'row'}>
             {NAV_Items.map((navItem) => (
                 <Box alignItems={'center'}
                      gap={1}
@@ -109,10 +85,9 @@ export const DesktopNav = () => {
                      href={`/${navItem.href}`}
                      scroll
                      prefetch
-                      className='gap-7 link_active font-light hover:no-underline cursor-pointer'
+                      className='text-sm whitespace-nowrap link_active font-light hover:no-underline cursor-pointer'
                         >{navItem.label}
                     </Link>
-                    <Box className=' w-[0.4rem] h-[3px] bg-[#fff]' />
                 </Box>
             ))}
         </Stack>
@@ -154,24 +129,24 @@ interface NavItem {
     href?: string,
 }
 const NAV_Items: Array<NavItem> = [
+    // {
+    //     label: 'home',
+    //     href: '/'
+    // },
     {
-        label: 'home',
-        href: '/'
-    },
-    {
-        label: 'listings',
+        label: 'Buy Property',
         href: '#listings'
     },
     {
-        label: 'explore',
+        label: 'Sell Property',
         href: '#explore'
     },
     {
-        label: 'testimonials',
+        label: 'Rent Property',
         href: '#testimonials'
     },
     {
-        label: 'agents',
+        label: 'Services',
         href: '#agents'
     },
 ]
