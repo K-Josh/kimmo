@@ -10,7 +10,7 @@ function FeatureList() {
             <Box className='flex items-center justify-center' mt='18vh'>
               <Stack>
                  <Box className='flex-col items-center justify-center mx-auto text-center'>
-                    <Text fontSize='sm' className='font-semibold'>Discover</Text>
+                    <Text fontSize='sm' className='font-thin'>Discover</Text>
                     <Text fontSize={'3xl'} className=' font-bold'>Find Your Dream Property Today</Text>
                     <Text fontSize='14px' className='md:w-[42rem]'>At Kimmo Deals, we offer an extensive range of property listings to help you find your dream property. Our expert management team ensures a seamless buying experience, and our excellent customer service is always there to assist you.</Text>
                  </Box>

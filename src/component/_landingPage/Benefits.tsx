@@ -4,7 +4,7 @@ import React from 'react';
 import { ButtonKimmo } from '../subComponents/buttonComponent';
 import {  MdChevronRight } from 'react-icons/md';
 
-function FindHome() {
+function Benefits() {
     return (
         <div className='min-h-[90vh]'>
           <Box className='md:space-x-10' display={{base:'flex-col', md:'flex'}} mt={'24vh'} mx={'10vw'}>
@@ -43,4 +43,4 @@ function FindHome() {
     );
 }
 
-export default FindHome;
+export default Benefits;
