@@ -1,7 +1,7 @@
 "use client"
 import { Box, Button, Flex, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
-import { ButtonKimmo } from '../subComponents/buttonComponent';
+import { ButtonKimmo, ButtonSearch, ButtonVariant } from '../subComponents/buttonComponent';
 
 function Hero() {
   return (
@@ -20,17 +20,8 @@ function Hero() {
           <Stack>
             <Text className='font-extralight opacity-90 text-[15px] w-[500px]'>Welcome to Kimmo Deals, your trusted source for buying and selling properties. Explore our wide range of listings and find the perfect property for your needs.</Text>
             <Flex gap={2}>
-              <ButtonKimmo label='Search' />
-              <Button
-                 width={{base:'4rem', md:'6rem'}}
-                  height={{base:'2rem', md:'2.4rem'}}
-                  fontSize={'sm'}
-                  colorScheme='#DE6F19'
-                   variant='outline'
-                   className='text-tertiary'
-                         >
-                  Learn More
-                </Button>
+              <ButtonSearch label='Search' />
+              <ButtonVariant label='Learn More' />
             </Flex>
           </Stack>
         </Flex>

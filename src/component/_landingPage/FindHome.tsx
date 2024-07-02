@@ -2,7 +2,7 @@
 import { Image, Box, Stack, Text, Flex, Button } from '@chakra-ui/react';
 import React from 'react';
 import { ButtonKimmo } from '../subComponents/buttonComponent';
-import { MdArrowRightAlt, MdChevronRight } from 'react-icons/md';
+import {  MdChevronRight } from 'react-icons/md';
 
 function FindHome() {
     return (

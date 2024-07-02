@@ -1,6 +1,16 @@
+"use client"
 import React, {useState} from 'react';
 import {
     Button, IconButton,
+    Input,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    useDisclosure,
 } from '@chakra-ui/react'
 import Modals from "@/component/modals/Modals";
 import {IoClose} from "react-icons/io5";
@@ -28,7 +38,48 @@ export function ButtonKimmo({label}: ButtonProps) {
       </Button>
     )
 }
+export function ButtonSearch({label}: ButtonProps) {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    return (
+      <>
+        <Button 
+          width={{base:'4rem', md:'6rem'}}
+          height={{base:'2rem', md:'2.4rem'}}
+          color='#ffff'
+          fontSize={'13px'}
+          _hover={{bg:'orange.400'}}
+           className='bg-tertiary'
+           onClick={onOpen}
+       >
+        {label}
+      </Button>
+       <Modal
+       isCentered
+       onClose={onClose}
+       isOpen={isOpen}
+       motionPreset='slideInBottom'
+     >
+       <ModalOverlay bg='blackAlpha.300'
+           backdropFilter='blur(10px) hue-rotate(90deg)'/>
+       <ModalContent>
+         <ModalHeader>Search Property</ModalHeader>
+         <ModalCloseButton />
+         <ModalBody>
+           <Input focusBorderColor='orange.500' type='search' placeholder='search desired property' borderColor='gray.400' className='rounded-full' />
+         </ModalBody>
+         <ModalFooter>
+           <Button variant='outline' colorScheme='red.600' color='red' fontSize='sm' mr={3} onClick={onClose}>
+             Close
+           </Button>
+           <Button color='white' fontSize='sm' className='bg-tertiary' _hover={{bg:'orange.400'}}>Search</Button>
+         </ModalFooter>
+       </ModalContent>
+     </Modal>    
+    </>
+    )
+}
 export function ButtonVariant({label}: ButtonProps) {
+   
     return (
         <Button
         width={{base:'4rem', md:'6.5rem'}}
@@ -39,6 +90,7 @@ export function ButtonVariant({label}: ButtonProps) {
         >
            {label}
        </Button>
+     
     )
 }
 
