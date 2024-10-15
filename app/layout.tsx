@@ -5,13 +5,13 @@ import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['200', '700'],
   variable: '--font-montserrat'
 })
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['300', '700'],
+  weight: ['400', '700'],
   variable: '--font-montserrat'
 })
 
