@@ -5,7 +5,7 @@ import "aos/dist/aos.css"
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 
-const Listings = () => {
+const Listings = ({user}: NavItemProps) => {
   useEffect(() => {
     AOS.init({})
   }, [])
@@ -43,11 +43,19 @@ const Listings = () => {
               </div>
             </div>
 
-            <div>
-                <Link href='/sign up' className='!text-secondary font-semibold text-18'>   
-                   Sign up
-              </Link>
-            </div>
+            {user ? (
+              <div>
+                <Link className='!text-secondary font-semibold text-18' href='/home'>Home</Link>
+              </div>
+              ) 
+            : (
+              <div>
+              <Link href='/sign-in' className='!text-secondary font-semibold text-18'>   
+                 Sign in
+            </Link>
+            <Link className='!text-secondary font-semibold text-18' href='/home'>Home</Link>
+           </div>
+            )}
         </div>
 
     </section>

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-
 declare type SearchParamProps = {
     params: { [key: string]: string };
     searchParams: { [key: string]: string | string[] | undefined }
@@ -9,9 +8,9 @@ declare type SearchParamProps = {
 declare type SignUpParams = {
     firstName?: string;
     lastName?: string;
+    region?: string;
     email: string;
     password: string;
-    username: string;
 }
 
 declare type User = {
@@ -20,7 +19,9 @@ declare type User = {
     userId: string;
     firstName: string;
     lastName: string;
-    username: string;
+    name: string;
+    region: string;
+
 }
 
 declare type LoginUser = {
@@ -28,8 +29,8 @@ declare type LoginUser = {
     password: string;
 };
 
-declare type MobileNavProps = {
-    user: User;
+declare interface MobileNavProps {
+    user: "";
 }
 
 declare interface NavItemProps {
@@ -47,9 +48,20 @@ declare interface SidebarProps {
 declare interface signInProps {
     email: string;
     password: string;
-    username: string;
+}
+
+declare interface HeaderProps {
+    type?: "title" | "greeting";
+    title: string;
+    user?: string;
+    subtext: string;
 }
 
 declare interface getUserInfoProps {
     userId: string;
+}
+
+declare interface FooterProps {
+    user: User;
+    type?: "desktop" | "mobile"
 }

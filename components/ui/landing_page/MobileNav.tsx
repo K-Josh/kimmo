@@ -1,13 +1,12 @@
 "use client"
-
 import React from 'react'
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from './sheet'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '../sheet'
 import Image from 'next/image'
 import Link from 'next/link'
 import { navbarLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
 
-const MobileNav = () => {
+function MobileNav({user}: MobileNavProps) {
     const pathname = usePathname()
   return (
     <section className='w-full max-w-[264px]'>

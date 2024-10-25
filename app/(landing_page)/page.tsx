@@ -1,7 +1,7 @@
-import Feature from '@/components/ui/Feature'
-import Footer from '@/components/ui/Footer'
-import Hero from '@/components/ui/Hero'
-import Listings from '@/components/ui/Listings'
+import Feature from '@/components/ui/landing_page/Feature'
+import Footer from '@/components/ui/landing_page/Footer'
+import Hero from '@/components/ui/landing_page/Hero'
+import Listings from '@/components/ui/landing_page/Listings'
 import React from 'react'
 
 const Home = () => {
